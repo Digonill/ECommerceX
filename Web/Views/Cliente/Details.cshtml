@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Web.ViewModels.ItensPedidoEntidadeViewModels> 
+
+@{
+    ViewBag.Title = "Detalhe do Pedido";
+}
+
+<h2>Detalhe do Pedido</h2>
+
+@foreach (var item in Model)
+{
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nome do Produto
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(modelitem => item.NomeProduto)
+        </dd>
+
+        <dt>
+            Valor Unitário
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(modelitem => item.ValorUnitario)
+        </dd>
+
+        <dt>
+            Valor Total
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(modelitem => item.ValorTotal)
+        </dd>
+
+        <dt>
+            Quantidade
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(modelitem => item.Quantidade)
+        </dd>
+
+    </dl>
+</div>
+}
+<p>    
+    @Html.ActionLink("Back to List", "Index")
+</p>

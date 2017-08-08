@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D5B03375-7D45-410F-9206-AC00F7A1003F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EcX.Dominio</RootNamespace>
+    <AssemblyName>EcX.Dominio</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Entidade\ClienteEntidade.cs" />
+    <Compile Include="Entidade\EnumStatusPedido.cs" />
+    <Compile Include="Entidade\ItensPedidoEntidade.cs" />
+    <Compile Include="Entidade\PedidoEntidade.cs" />
+    <Compile Include="Repositorio\IRepositorioUsuario.cs" />
+    <Compile Include="Servico\Interface\IUsuarioServicoDominio.cs" />
+    <Compile Include="Servico\UsuarioServicoDominio.cs" />
+    <Compile Include="_Interface\Repositorio\IDatabaseContexto.cs" />
+    <Compile Include="Repositorio\IRepositorioCliente.cs" />
+    <Compile Include="Servico\BaseServicoDominio.cs" />
+    <Compile Include="Repositorio\IConfiguracaoModelo.cs" />
+    <Compile Include="Servico\ClienteServicoDominio.cs" />
+    <Compile Include="Servico\Interface\IClienteServicoDominio.cs" />
+    <Compile Include="Servico\Interface\IProdutoServicoDominio.cs" />
+    <Compile Include="Servico\ProdutoServicoDominio.cs" />
+    <Compile Include="Entidade\EntidadeGuidIDBase.cs" />
+    <Compile Include="_Interface\Entidade\IEntidade.cs" />
+    <Compile Include="_Interface\Entidade\IEntidadeExclusaoLogica.cs" />
+    <Compile Include="_Interface\Applicacao\IServico.cs" />
+    <Compile Include="_Interface\Servico\ICRUDServicoBase.cs" />
+    <Compile Include="Entidade\ProdutoEntidade.cs" />
+    <Compile Include="Repositorio\IRepositorioProduto.cs" />
+    <Compile Include="Entidade\UsuarioEntidade.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="_Interface\Repositorio\IRepositorio.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ecx.Infra.CrossCutting\Ecx.Infra.CrossCutting.csproj">
+      <Project>{0468099D-A93A-48F1-B412-CB0E5D449EAA}</Project>
+      <Name>Ecx.Infra.CrossCutting</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Web.ViewModels.ProdutoViewModel>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h3>E-Commerce</h3>
+    <p class="lead">E-commerce desenvolvido para avaliação do Itaú Unibanco.</p>
+    <p><a href="https://www.linkedin.com/in/rodrigooliveiras/" target="_blank" class="btn btn-primary btn-lg">linkedin</a></p>
+</div>
+
+
+
+@{
+    var user = HttpContext.Current.Session["UsuarioLogado"] as Web.ViewModels.UsuarioViewModel;
+    if (user != null)
+    {
+        if (!user.IsAdministrador)
+        {
+            <div class="row">
+                <div class="col-md-3">
+                    <form method="post" action="~/Home/Pesquisar">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search" name="search">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit" value="Pesquisar"><i class="glyphicon glyphicon-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                    @Html.ActionLink("Limpar filtro", "Index")
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">@Html.DisplayFor(modelItem => item.Nome)</div>
+                            <div class="panel-body">
+                                <span class="text-primary">
+                                    @Html.DisplayFor(modelItem => item.Descricao)
+                                </span><br />
+                                <span><strong>@Html.DisplayFor(modelItem => item.Valor)</strong></span>
+                            </div>
+                            <div class="panel-footer text-right">
+                                <a href="#" onclick="javascript:AdicionarCarrinho('@item.ID');" class="btn btn-info btn-sm">
+                                    <span class="glyphicon glyphicon-shopping-cart"></span>Adicionar ao Carrinho
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        }
+    }
+}
+<script>
+    function AdicionarCarrinho(data) {
+        $.ajax({
+            //dataType: "application/json",
+            type: "POST",
+            url: "/Cliente/AdicionarProduto",
+            data: { Idproduto: data },
+            success: function (dados) {
+                window.alert('Produto adicionado com sucesso');
+            },
+            error: function (dados) {
+                window.alert('Erro : ' + dados.responseText);
+            }
+
+        });
+
+        return false;
+    }
+</script>

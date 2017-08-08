@@ -1,0 +1,21 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Error";
+}
+
+<div class="alert alert-warning">
+    <strong>Erro!</strong> Ocorreu um erro ao processar sua requisição. :(.
+</div>
+
+<div class="panel panel-danger">
+    <div class="panel-heading">Detalhe</div>
+    <div class="panel-body">
+        <span><strong>URL: </strong>@Model.ControllerName/@Model.ActionName</span><br />
+        <span><strong>Exception:</strong>@</span><br />
+        <span>@Model.Exception.Message</span><br />
+        <span>@Model.Exception.ToString()</span><br />
+
+    </div>
+</div>
+
