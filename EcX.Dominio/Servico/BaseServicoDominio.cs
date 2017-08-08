@@ -17,7 +17,7 @@ namespace EcX.Dominio
 
 
         public void Atualizar(TEntidade entidade)
-        {
+        { 
             _repositorio.Atualizar(entidade);
         }
 
