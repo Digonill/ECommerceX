@@ -14,6 +14,7 @@ namespace Web.ViewModels
         [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
         public string Nome { get; set; }
 
+        [Required(ErrorMessage = "Preencha o campo Descrição")]
         [MaxLength(250, ErrorMessage = "Máximo {0} caracteres")]
         public string Descricao { get; set; }
 
