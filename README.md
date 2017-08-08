@@ -42,21 +42,21 @@ WEb - MVC
 Já existe um login de acesso com permissão de Administrador. 
 Para utilizar as outras funções do sistema será necessario criar outros usuários.
 
-´´´
+```
 Login : Admin@Admin.com.br
 Senha : Admin
- 
-´´´
+```
 
 ### Security 
 
 Existe dois perfis com permissões distintas. Abaixo a lista de cada funcionalidade para os perfis.
 
-´´´
+```
 Administrar 
 	1 - CRUD produtos
 	2 - Login / Logout
-
+```
+```
 Cliente
 	1 - Buscar produtos (por Nome / Descrição)
 	2 - Criar Pedido 
@@ -65,9 +65,7 @@ Cliente
 	5 - Finalizar compra
 	6 - Remover Produto do carrinho
 	7 - Login / Logout
-´´´
-
-
+```
 
 ## Authors
 
