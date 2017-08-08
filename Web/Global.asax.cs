@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Net.Http;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -21,8 +23,8 @@ namespace Web
         void Session_Start(object sender, EventArgs e)
         {
             if (HttpContext.Current.Request.IsAuthenticated)
-            {               
-                FormsAuthentication.SignOut();                
+            {
+                FormsAuthentication.SignOut();
                 FormsAuthentication.RedirectToLoginPage();
                 HttpContext.Current.Response.End();
             }
@@ -55,5 +57,20 @@ namespace Web
             }
         }
 
+        protected void Application_Error(Object sender, EventArgs e)
+        {
+            Exception ex = Server.GetLastError();
+            if (ex is ThreadAbortException)
+                return;
+
+
+            Response.Write("<h2>Global Page EcommerceX Error </h2>\n");
+            Response.Write("<p> Messagem: " + ex.Message + "</p><br/><p> InnerExcpetion: " + ex.InnerException + "</p>");
+            Response.Write("Return to the <a href='/Home'>" +
+                "Default Page</a>\n");
+
+            // clear error on server
+            Server.ClearError();
+        }
     }
 }

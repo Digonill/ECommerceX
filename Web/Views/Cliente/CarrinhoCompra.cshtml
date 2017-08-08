@@ -8,46 +8,61 @@
 
 <h2>Carrinho de Compra</h2>
 
-<div class="panel panel-default">
-    <div class="panel-heading"><strong>ID:</strong> @Model.ID <span class="label label-default">Novo</span></div>
-    <div class="panel-body">
-        <div class="col-md-8">
-            <p>
-                <ul class="list-inline">
-                    <li><strong>Data:</strong> @Model.DataCriacao</span></li>
-                    <li><strong>Situação:</strong> @Model.StatusPedido</span></li>
-                    <li><strong>Valor do Pedido: </strong> @string.Format("{0:c}", Model.ValorTotal)</span></li>
-                </ul>
-            </p>
-        </div>
-        <div class="col-md-4 text-right">
-            @Html.ActionLink("Finalizar Compra ", "FinalizarCompra", "Cliente", new { id = Model.ID }, new { @class = "btn btn-success" });
+@if (Model.ID == Guid.Empty)
+{
+
+    <div class="panel panel-default">
+        <div class="panel-heading"> Informativo</div>
+        <div class="panel-body">
+            <div class="col-md-8">
+                <p>                    Você não possui produtos no carrinho de compras
+                </p>
+            </div>
         </div>
     </div>
-</div>
+}
+else
+{
+    <div class="panel panel-default">
+        <div class="panel-heading"><strong>ID:</strong> @Model.ID <span class="label label-default">Novo</span></div>
+        <div class="panel-body">
+            <div class="col-md-8">
+                <p>
+                    <ul class="list-inline">
+                        <li><strong>Data:</strong> @Model.DataCriacao</li>
+                        <li><strong>Situação:</strong>@Model.StatusPedido</li>
+                        <li><strong>Valor do Pedido: </strong> @string.Format("{0:c}", Model.ValorTotal)</li>
+                    </ul>
+                </p>
+            </div>
+            <div class="col-md-4 text-right">
+                @Html.ActionLink("Finalizar Compra ", "FinalizarCompra", "Cliente", new { id = Model.ID }, new { @class = "btn btn-success" });
+            </div>
+        </div>
+    </div>
 
-<div class="panel panel-default">
-    <div class="panel-heading"><strong>Lista de produtos </strong></div>
-    <div class="panel-body">
-        <table class="table table-hover small">
-            <tr>
-                <th>
-                    Produto
-                </th>
-                <th>
-                    Valor
-                </th>
-                <th>
-                    Quantidade
-                </th>
-                <th>
-                    Valor Total
-                </th>
-                <th></th>
-            </tr>
+    <div class="panel panel-default">
+        <div class="panel-heading"><strong>Lista de produtos </strong></div>
+        <div class="panel-body">
+            <table class="table table-hover small">
+                <tr>
+                    <th>
+                        Produto
+                    </th>
+                    <th>
+                        Valor
+                    </th>
+                    <th>
+                        Quantidade
+                    </th>
+                    <th>
+                        Valor Total
+                    </th>
+                    <th></th>
+                </tr>
 
-            @foreach (var item in Model.Itens)
-            {
+                @foreach (var item in Model.Itens)
+                {
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.NomeProduto)
@@ -65,9 +80,8 @@
                         @Html.ActionLink("Remover", "RemoverItemPedido", new { idPedido = Model.ID, IditemPedido = item.ID })
                     </td>
                 </tr>
-            }
-        </table>
+                }
+            </table>
+        </div>
     </div>
-</div>
-
-
+}

@@ -27,6 +27,7 @@ A string de conexÃ£o estão no app.config do projeto Ecx.Server.WebApi. Verifica 
 ```
 
 
+
 ### Run 
 
 Para rodar é preciso que seja iniciado dois projetos ao mesmo tempo. Para isso você deve clicar com o botão direito do mouse sobre a solução e ir no item menu Set StartUp Project
@@ -35,6 +36,38 @@ Para rodar é preciso que seja iniciado dois projetos ao mesmo tempo. Para isso v
 EcX.Server.WebApi  - API
 WEb - MVC
 ```
+
+### How to begin
+
+Já existe um login de acesso com permissão de Administrador. 
+Para utilizar as outras funções do sistema será necessario criar outros usuários.
+
+´´´
+Login : Admin@Admin.com.br
+Senha : Admin
+ 
+´´´
+
+### Security 
+
+Existe dois perfis com permissões distintas. Abaixo a lista de cada funcionalidade para os perfis.
+
+´´´
+Administrar 
+	1 - CRUD produtos
+	2 - Login / Logout
+
+Cliente
+	1 - Buscar produtos (por Nome / Descrição)
+	2 - Criar Pedido 
+	3 - Adicionar produto carrinho
+	4 - Historico de pedidos	
+	5 - Finalizar compra
+	6 - Remover Produto do carrinho
+	7 - Login / Logout
+´´´
+
+
 
 ## Authors
 
