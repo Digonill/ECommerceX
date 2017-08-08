@@ -1,10 +1,10 @@
 # EcommerceX
-Este projeto foi desenvolvido utilizando arquitetura DDD e tÈcnicas TDD e uma camada de microservices
+Este projeto foi desenvolvido utilizando arquitetura DDD e t√©cnicas TDD e uma camada de microservices
 
 ## Getting Started
 
 
-Para executar a soluÁ„o ser· necessario executar alguns passos.
+Para executar a solu√ß√£o ser√° necessario executar alguns passos.
 
 
 ### Prerequisites
@@ -19,18 +19,23 @@ SQL EXPRESS ou LocalDB
 
 2- Verificar a String de conexao
 
-A string de conex√£o est„o no app.config do projeto Ecx.Server.WebApi. Verifica se o SQL esta configurado para Integrated Security, caso n„o esteja, informe o usu·rio que tenha permiss„o para o Entity Framework realizar o setup.
+A string de conex√£o est√£o no app.config do projeto Ecx.Server.WebApi. Verifica se o SQL esta configurado para Integrated Security, caso n√£o esteja, informe o usu√°rio que tenha permiss√£o para o Entity Framework realizar o setup.
 ```
 <connectionStrings>
     <add name="ECXDB" providerName="System.Data.SqlClient" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=ECXDB;Integrated Security=True;MultipleActiveResultSets=True" />
 </connectionStrings>
 ```
-
+OU
+```
+<connectionStrings>
+<add name="ECXDB" providerName="System.Data.SqlClient" connectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ECXDB;Integrated Security=True;MultipleActiveResultSets=True" />
+</connectionStrings>
+```
 
 
 ### Run 
 
-Para rodar È preciso que seja iniciado dois projetos ao mesmo tempo. Para isso vocÍ deve clicar com o bot„o direito do mouse sobre a soluÁ„o e ir no item menu Set StartUp Project
+Para rodar √© preciso que seja iniciado dois projetos ao mesmo tempo. Para isso voc√™ deve clicar com o bot√£o direito do mouse sobre a solu√ß√£o e ir no item menu Set StartUp Project
 
 ```
 EcX.Server.WebApi  - API
@@ -39,8 +44,8 @@ WEb - MVC
 
 ### How to begin
 
-J· existe um login de acesso com permiss„o de Administrador. 
-Para utilizar as outras funÁıes do sistema ser· necessario criar outros usu·rios.
+J√° existe um login de acesso com permiss√£o de Administrador. 
+Para utilizar as outras fun√ß√µes do sistema ser√° necessario criar outros usu√°rios.
 
 ```
 Login : Admin@Admin.com.br
@@ -49,7 +54,7 @@ Senha : Admin
 
 ### Security 
 
-Existe dois perfis com permissıes distintas. Abaixo a lista de cada funcionalidade para os perfis.
+Existe dois perfis com permiss√µes distintas. Abaixo a lista de cada funcionalidade para os perfis.
 
 ```
 Administrar 
@@ -58,7 +63,7 @@ Administrar
 ```
 ```
 Cliente
-	1 - Buscar produtos (por Nome / DescriÁ„o)
+	1 - Buscar produtos (por Nome / Descri√ß√£o)
 	2 - Criar Pedido 
 	3 - Adicionar produto carrinho
 	4 - Historico de pedidos	
