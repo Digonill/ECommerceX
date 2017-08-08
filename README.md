@@ -1,23 +1,23 @@
 # EcommerceX
-Este projeto foi desenvolvido utilizando arquitetura DDD e tÈcnicas TDD e uma camada de microservices
+Este projeto foi desenvolvido utilizando arquitetura DDD e t√©cnicas TDD e uma camada de microservices
 
-##Getting Started
+## Getting Started
 
-Para executar a soluÁ„o ser· necessario executar alguns abaixo que irei descrever logo abaixo
+Para executar a solu√ß√£o ser√° necessario executar alguns abaixo que irei descrever logo abaixo
 
 ### Prerequisites
 
 Visual Studio 2015 
 Acesso a internet para poder restaurar o pacote nuget
-SQL EXPRESS ou LocalDB (Na instalaÁ„o do VSTO2015 vem o localDB)
+SQL EXPRESS ou LocalDB (Na instala√ß√£o do VSTO2015 vem o localDB)
 
 ### Installing
 
 1 - Restaurar os pacotes NUGET
 
-2- Verificar a String de conex„o
+2- Verificar a String de conex√£o
 
-A string de conex„o est· no app.config do projeto Ecx.Server.WebApi. Verifica se o SQL esta configurado para Integrated Security, caso n„o esteja informe o usu·rio que tenha permiss„o para o Entity Framework realizar o setup inicial.
+A string de conex√£o est√° no app.config do projeto Ecx.Server.WebApi. Verifica se o SQL esta configurado para Integrated Security, caso n√£o esteja informe o usu√°rio que tenha permiss√£o para o Entity Framework realizar o setup inicial.
 ...
 <connectionStrings>
     <add name="ECXDB" providerName="System.Data.SqlClient" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=ECXDB;Integrated Security=True;MultipleActiveResultSets=True" />
@@ -27,7 +27,7 @@ A string de conex„o est· no app.config do projeto Ecx.Server.WebApi. Verifica se
 
 ### Run 
 
-Para rodar È preciso que seja iniciado dois projetos. Para isso vocÍ deve clicar com o bot„o direito do mouse sobre a soluÁ„o e ir no item menu Set StartUp Project
+Para rodar √© preciso que seja iniciado dois projetos. Para isso voc√™ deve clicar com o bot√£o direito do mouse sobre a solu√ß√£o e ir no item menu Set StartUp Project
 
 ...
 EcX.Server.WebApi  - API
